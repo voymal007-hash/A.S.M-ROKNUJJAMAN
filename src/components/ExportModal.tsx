@@ -169,6 +169,23 @@ export const ExportModal: React.FC<ExportModalProps> = ({
 
           {/* Export Options */}
           <div className="space-y-2.5">
+            <a
+              href="/Land_Ledger_App.zip"
+              download="Land_Ledger_App.zip"
+              className="w-full flex items-center justify-between p-3.5 rounded-xl border border-emerald-300 bg-emerald-50/60 hover:bg-emerald-100/60 transition group"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 rounded-lg bg-emerald-700 text-white flex items-center justify-center">
+                  <Download className="w-5 h-5" />
+                </div>
+                <div className="text-left">
+                  <h4 className="font-bold text-emerald-950">📦 সম্পূর্ণ অফলাইন অ্যাপ জিপ (App ZIP)</h4>
+                  <p className="text-xs text-emerald-800">ফোনে বা কম্পিউটারে আনজিপ করে ইন্টারনেট ছাড়া সম্পূর্ণ অ্যাপ চালান</p>
+                </div>
+              </div>
+              <Download className="w-4 h-4 text-emerald-700" />
+            </a>
+
             <button
               onClick={handleExportCSV}
               className="w-full flex items-center justify-between p-3.5 rounded-xl border border-slate-200 hover:border-emerald-300 hover:bg-emerald-50/50 transition group"

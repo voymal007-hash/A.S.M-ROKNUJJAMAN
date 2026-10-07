@@ -21,6 +21,7 @@ import {
   Languages,
   Camera,
   WifiOff,
+  QrCode,
 } from 'lucide-react';
 
 import { LandRecord, FilterStatus, LedgerSummary } from './types';
@@ -42,6 +43,7 @@ import { SettingsModal } from './components/SettingsModal';
 import { APKInstallModal } from './components/APKInstallModal';
 import { LogoUploadModal } from './components/LogoUploadModal';
 import { PWAInstallButton } from './components/PWAInstallButton';
+import { MobileSetupBanner } from './components/MobileSetupBanner';
 import { OfflineIndicator } from './components/OfflineIndicator';
 
 export default function App() {
@@ -299,6 +301,16 @@ export default function App() {
               <Languages className="w-3.5 h-3.5 text-emerald-700" />
               <span>{settings.language === 'bn' ? 'বাংলা' : 'EN'}</span>
             </button>
+            {/* QR Code Scanner Button */}
+            <button
+              onClick={() => setIsAPKModalOpen(true)}
+              className="p-2 rounded-xl border border-emerald-300 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 text-xs font-bold transition flex items-center gap-1 cursor-pointer"
+              title="মোবাইলে স্ক্যান করে খুলুন (Scan QR Code for Mobile)"
+            >
+              <QrCode className="w-4 h-4 text-emerald-700" />
+              <span className="hidden md:inline">কিউআর কোড</span>
+            </button>
+
             {/* Install APK / PWA button */}
             <PWAInstallButton onOpenModal={() => setIsAPKModalOpen(true)} />
 
@@ -332,6 +344,9 @@ export default function App() {
           activeFilter={activeFilter}
           onFilterChange={setActiveFilter}
         />
+
+        {/* Mobile Setup, QR Code & Offline Download Banner */}
+        <MobileSetupBanner />
 
         {/* Main Records Table & Card List */}
         <RecordList
