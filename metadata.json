@@ -1,0 +1,6 @@
+{
+  "name": "Land Ledger APK - Land & Due Manager",
+  "description": "Mobile app for managing land records, rates, totals, dues, payments, and paid summaries.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
